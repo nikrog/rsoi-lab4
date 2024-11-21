@@ -13,6 +13,8 @@ services:
       - ./postgres/:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
+    networks:
+      - internal
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 15s
@@ -21,6 +23,7 @@ services:
 
   reservation_service:
     build: hotels_booking_system/services/reservation_service
+    image: arperinn/reservation-service:latest
     container_name: reservation_service
     depends_on:
       postgres:
@@ -33,9 +36,12 @@ services:
       DB_HOST: "postgres"
     ports:
       - "8070:8070"
+    networks:
+      - internal
 
   payment_service:
     build: hotels_booking_system/services/payment_service
+    image: arperinn/payment-service:latest
     container_name: payment_service
     depends_on:
       postgres:
@@ -48,9 +54,12 @@ services:
       DB_HOST: "postgres"
     ports:
       - "8060:8060"
+    networks:
+      - internal
 
   loyalty_service:
     build: hotels_booking_system/services/loyalty_service
+    image: arperinn/loyalty-service:latest
     container_name: loyalty_service
     depends_on:
       postgres:
@@ -63,9 +72,12 @@ services:
       DB_HOST: "postgres"
     ports:
       - "8050:8050"
+    networks:
+      - internal
 
   gateway_service:
     build: hotels_booking_system/services/gateway_service
+    image: arperinn/api-gateway:latest
     container_name: gateway_service
     depends_on:
       - reservation_service
@@ -80,6 +92,11 @@ services:
       LOYALTY_SERVICE_PORT: "8050"
     ports:
       - "8080:8080"
+    networks:
+      - internal
 
 volumes:
   db-data:
+
+networks:
+  internal:
