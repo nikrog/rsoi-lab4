@@ -38,7 +38,7 @@ jobs:
           docker compose logs postgres
           sleep 5
           cd postgres
-          psql "user=postgres hostaddr=127.0.0.1 port=5432 password=postgres" < scripts/db-v2.sql
+          psql "user=postgres hostaddr=127.0.0.1 port=5432 password=postgres" < scripts_db/db-v2.sql
 
       - name: Run containers
         timeout-minutes: 10
@@ -55,7 +55,7 @@ jobs:
           docker compose logs queue_service
           docker compose logs gateway_service
           
-          ./scripts/wait-script.sh
+          ./scripts_wf/wait-script.sh
         env:
           WAIT_PORTS: 8080,8070,8060,8050
 
