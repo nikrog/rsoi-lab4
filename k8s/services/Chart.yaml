@@ -1,19 +1,19 @@
 apiVersion: v2
-name: hotels_booking_services
+name: hotels-booking-services
 description: A Helm chart for hotels booking services
 type: application
 version: 1.0.0
 dependencies:
-  - name: service_chart
+  - name: service-chart
     version: 1.0.0
     alias: reservation
-  - name: service_chart
+  - name: service-chart
     version: 1.0.0
     alias: payment
-  - name: service_chart
+  - name: service-chart
     version: 1.0.0
     alias: loyalty
-  - name: service_chart
+  - name: service-chart
     version: 1.0.0
     alias: gateway
 

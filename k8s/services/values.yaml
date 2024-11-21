@@ -14,7 +14,7 @@ payment:
   service:
     type: ClusterIP
     port: 8060
-    image: arperinn/payments-service:latest
+    image: arperinn/payment-service:latest
     env:
       DATA_BASE_PORT: 5432
       DATA_BASE_NAME: payments
@@ -42,9 +42,9 @@ gateway:
     image: arperinn/api-gateway:latest
     isGateway: true
     env:
-      RESERVATION_SERVICE_HOST: reservations.arperinn.svc.cluster.local
+      RESERVATION_SERVICE_HOST: reservation.arperinn.svc.cluster.local
       RESERVATION_SERVICE_PORT: 8070
-      PAYMENT_SERVICE_HOST: payments.arperinn.svc.cluster.local
+      PAYMENT_SERVICE_HOST: payment.arperinn.svc.cluster.local
       PAYMENT_SERVICE_PORT: 8060
-      LOYALTY_SERVICE_HOST: loyalties.arperinn.svc.cluster.local
+      LOYALTY_SERVICE_HOST: loyalty.arperinn.svc.cluster.local
       LOYALTY_SERVICE_PORT: 8050
