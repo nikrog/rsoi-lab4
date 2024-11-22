@@ -117,8 +117,6 @@ jobs:
 
       - name: Setup Ingress
         run: |
-          minikube addons enable ingress
-          kubectl get pods -n ingress-nginx
           cd k8s/networking
           minikube service gateway -n arperinn --url
           kubectl apply -f ingress.yaml
