@@ -5,7 +5,7 @@ reserv:
     image: arperinn/reservation-service:latest
     env:
       DB_PORT: 5432
-      DB_NAME: reservations
+      DB_NAME: postgres
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_HOST: postgres

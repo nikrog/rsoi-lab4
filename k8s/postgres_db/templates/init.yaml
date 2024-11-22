@@ -74,5 +74,5 @@ data:
 
     \c loyalties;
 
-    insert into loyalty(id, username, reservation_count, status, disount)
+    insert into loyalty(id, username, reservation_count, status, discount)
     values (1, 'Test Max', 25, 'GOLD', 10);
