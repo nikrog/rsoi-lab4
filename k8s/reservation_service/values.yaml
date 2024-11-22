@@ -1,0 +1,10 @@
+service:
+  type: ClusterIP
+  port: 8070
+  image: arperinn/reservation-service:latest
+  env:
+    DATA_BASE_PORT: 5432
+    DATA_BASE_NAME: reservations
+    DATA_BASE_USER: program
+    DATA_BASE_PASS: test
+    DATA_BASE_HOST: postgres

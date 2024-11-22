@@ -104,7 +104,7 @@ jobs:
           helm install -n arperinn postgres ./postgres_db
           echo "------------------Deploy Services------------------"
           helm delete reserv --namespace arperinn --ignore-not-found
-          helm install -n arperinn reserv ./services
+          helm install -n arperinn reserv ./reservation_service
 #          helm delete payment --namespace arperinn --ignore-not-found
 #          helm install -n arperinn payment ./services
 #          helm delete loyalty --namespace arperinn --ignore-not-found
