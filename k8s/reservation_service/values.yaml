@@ -4,7 +4,7 @@ service:
   image: arperinn/reservation-service:latest
   env:
     DATA_BASE_PORT: 5432
-    DATA_BASE_NAME: reservations
+    DATA_BASE_NAME: postgres
     DATA_BASE_USER: postgres
     DATA_BASE_PASS: postgres
     DATA_BASE_HOST: postgres

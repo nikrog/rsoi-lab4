@@ -9,13 +9,13 @@ data:
     ALTER ROLE {{ .Values.pg.primary.user }} WITH LOGIN;
     
     CREATE DATABASE cars;
-    GRANT ALL PRIVILEGES ON DATABASE payments TO {{ .Values.pg.primary.user }};
+    GRANT ALL PRIVILEGES ON DATABASE payments TO {{ .Values.pg.default.user }};
 
     CREATE DATABASE rentals;
-    GRANT ALL PRIVILEGES ON DATABASE reservations TO {{ .Values.pg.primary.user }};
+    GRANT ALL PRIVILEGES ON DATABASE reservations TO {{ .Values.pg.default.user }};
 
     CREATE DATABASE payments;
-    GRANT ALL PRIVILEGES ON DATABASE loyalties TO {{ .Values.pg.primary.user }};
+    GRANT ALL PRIVILEGES ON DATABASE loyalties TO {{ .Values.pg.default.user }};
 
     \c reservations;
 
