@@ -118,9 +118,10 @@ jobs:
       - name: Setup Ingress
         run: |
           cd k8s/networking
+          minikube service gateway --url
           kubectl apply -f ingress.yaml
           kubectl get ingress
-          minikube ip
+          sudo echo "$(minikube ip) myapp.local" | sudo tee -a /etc/hosts
 
       - uses: education/autograding@v1
         id: autograder
