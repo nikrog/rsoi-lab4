@@ -5,9 +5,9 @@ reserv:
     image: arperinn/reservation-service:latest
     env:
       DB_PORT: 5432
-      DB_NAME: postgres
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_NAME: reservations
+      DB_USER: program
+      DB_PASSWORD: test
       DB_HOST: postgres
 
 payment:
@@ -17,9 +17,9 @@ payment:
     image: arperinn/payment-service:latest
     env:
       DB_PORT: 5432
-      DB_NAME: postgres
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_NAME: payments
+      DB_USER: program
+      DB_PASSWORD: test
       DB_HOST: postgres
 
 loyalty:
@@ -29,9 +29,9 @@ loyalty:
     image: arperinn/loyalty-service:latest
     env:
       DB_PORT: 5432
-      DB_NAME: postgres
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_NAME: loyalties
+      DB_USER: program
+      DB_PASSWORD: test
       DB_HOST: postgres
 
 gateway:
