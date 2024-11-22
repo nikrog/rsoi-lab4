@@ -6,7 +6,7 @@ version: 1.0.0
 dependencies:
   - name: service-chart
     version: 1.0.0
-    alias: reservation
+    alias: reserv
   - name: service-chart
     version: 1.0.0
     alias: payment
