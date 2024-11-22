@@ -118,7 +118,7 @@ jobs:
       - name: Setup Ingress
         run: |
           cd k8s/networking
-          minikube service gateway --url
+          minikube service gateway -n arperinn --url
           kubectl apply -f ingress.yaml
           kubectl get ingress
           sudo echo "$(minikube ip) myapp.local" | sudo tee -a /etc/hosts
