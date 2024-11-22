@@ -103,14 +103,14 @@ jobs:
           helm delete postgres --namespace arperinn --ignore-not-found
           helm install -n arperinn postgres ./postgres_db
           echo "------------------Deploy Services------------------"
-          helm delete reservation --namespace arperinn --ignore-not-found
+          helm delete reserv --namespace arperinn --ignore-not-found
           helm install -n arperinn reserv ./services
-          helm delete payment --namespace arperinn --ignore-not-found
-          helm install -n arperinn payment ./services
-          helm delete loyalty --namespace arperinn --ignore-not-found
-          helm install -n arperinn loyalty ./services
-          helm delete gateway --namespace arperinn --ignore-not-found
-          helm install -n arperinn gateway ./services
+#          helm delete payment --namespace arperinn --ignore-not-found
+#          helm install -n arperinn payment ./services
+#          helm delete loyalty --namespace arperinn --ignore-not-found
+#          helm install -n arperinn loyalty ./services
+#          helm delete gateway --namespace arperinn --ignore-not-found
+#          helm install -n arperinn gateway ./services
 
       - name: Wait 30s
         uses: jakejarvis/wait-action@master
