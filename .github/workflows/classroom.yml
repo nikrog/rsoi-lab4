@@ -104,7 +104,7 @@ jobs:
           helm install -n arperinn postgres ./postgres_db
           echo "------------------Deploy Services------------------"
           helm delete reserv --namespace arperinn --ignore-not-found
-          helm install -n arperinn reserv ./reservation_service
+          helm install -n arperinn reserv ./services
 #          helm delete payment --namespace arperinn --ignore-not-found
 #          helm install -n arperinn payment ./services
 #          helm delete loyalty --namespace arperinn --ignore-not-found
@@ -112,10 +112,10 @@ jobs:
 #          helm delete gateway --namespace arperinn --ignore-not-found
 #          helm install -n arperinn gateway ./services
 
-      - name: Wait 60s
+      - name: Wait 30s
         uses: jakejarvis/wait-action@master
         with:
-          time: '60s'
+          time: '30s'
 
       - name: Get all resources from namespace arperinn in Cluster
         run: |
