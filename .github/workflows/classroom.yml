@@ -117,6 +117,8 @@ jobs:
 
       - name: Setup Ingress
         run: |
+          minikube addons enable ingress
+          kubectl get pods -n ingress-nginx
           cd k8s/networking
           minikube service gateway -n arperinn --url
           kubectl apply -f ingress.yaml
@@ -128,7 +130,7 @@ jobs:
         id: version
         with:
           cmd: >-
-            jq '.values[0].value = "http://myapp.local:8080"'
+            jq '.values[0].value = "http://myapp.local:30000"'
             < v2/postman/environment.json > out.tmp &&
             mv out.tmp v2/postman/environment.json
 
