@@ -128,7 +128,7 @@ jobs:
         id: version
         with:
           cmd: >-
-            jq '.values[0].value = "http://myapp.local:30000"'
+            jq '.values[0].value = "http://${{ secrets.PROD_HOST }}:${{ secrets.PROD_PORT }}"'
             < v2/postman/environment.json > out.tmp &&
             mv out.tmp v2/postman/environment.json
 
